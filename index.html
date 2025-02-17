@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&S - Governança Corporativa Integrada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 5px;
+    }
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      background-color: #e6e6e6;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .options label:hover {
+      background-color: #d4d4d4;
+    }
+    .options input[type="radio"] {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #002244;
+    }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #e6f2ff;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #003366;
+      display: none;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>C&S - Governança Corporativa Integrada</h1>
+    <h2>Auto Diagnóstico para Empresas Familiares</h2>
+    <p>Responda às perguntas abaixo para avaliar o grau de maturidade da sua empresa em governança corporativa.</p>
+
+
+
+    <form id="diagnosticForm">
+      <!-- Pergunta 1 -->
+      <div class="question">
+        <p>1. Como a empresa lida com a sucessão familiar?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="1"> A) Não há planejamento formal para sucessão.</label>
+          <label><input type="radio" name="q1" value="2"> B) Existe uma discussão informal, mas sem documentação ou cronograma.</label>
+          <label><input type="radio" name="q1" value="3"> C) Há um plano de sucessão documentado, mas ainda não foi totalmente implementado.</label>
+          <label><input type="radio" name="q1" value="4"> D) A empresa possui um plano de sucessão formal, com cronograma e envolvimento de profissionais externos.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="question">
+        <p>2. Qual é o nível de profissionalização da gestão?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="1"> A) A gestão é totalmente familiar, sem participação de profissionais externos.</label>
+          <label><input type="radio" name="q2" value="2"> B) Algumas áreas são geridas por profissionais contratados, mas a maioria é familiar.</label>
+          <label><input type="radio" name="q2" value="3"> C) A gestão é mista, com profissionais externos em posições-chave e familiares em cargos estratégicos.</label>
+          <label><input type="radio" name="q2" value="4"> D) A gestão é totalmente profissionalizada, com critérios claros de meritocracia.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="question">
+        <p>3. Como é a separação entre patrimônio familiar e empresarial?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="1"> A) Não há separação clara entre os patrimônios.</label>
+          <label><input type="radio" name="q3" value="2"> B) Existe uma separação parcial, mas ainda há sobreposição.</label>
+          <label><input type="radio" name="q3" value="3"> C) A separação é clara, mas ainda há algumas práticas que misturam os dois.</label>
+          <label><input type="radio" name="q3" value="4"> D) Há total separação entre patrimônio familiar e empresarial, com controles formais.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="question">
+        <p>4. Como são tomadas as decisões estratégicas na empresa?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="1"> A) As decisões são centralizadas em um único familiar, sem consulta a outros.</label>
+          <label><input type="radio" name="q4" value="2"> B) As decisões são discutidas em família, mas sem formalização.</label>
+          <label><input type="radio" name="q4" value="3"> C) As decisões são tomadas com base em conselhos informais e participação de alguns profissionais.</label>
+          <label><input type="radio" name="q4" value="4"> D) As decisões são tomadas por um Conselho de Administração formal, com participação de membros independentes.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="question">
+        <p>5. Qual é o nível de transparência na gestão financeira?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="1"> A) A gestão financeira é totalmente controlada pela família, sem transparência.</label>
+          <label><input type="radio" name="q5" value="2"> B) Há alguma transparência, mas apenas para familiares.</label>
+          <label><input type="radio" name="q5" value="3"> C) A gestão financeira é transparente para familiares e alguns gestores-chave.</label>
+          <label><input type="radio" name="q5" value="4"> D) A gestão financeira é totalmente transparente, com relatórios regulares para todos os stakeholders.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 6 -->
+      <div class="question">
+        <p>6. Como a empresa lida com conflitos familiares?</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="1"> A) Conflitos são resolvidos informalmente, sem regras claras.</label>
+          <label><input type="radio" name="q6" value="2"> B) Existe um protocolo básico, mas não é sempre seguido.</label>
+          <label><input type="radio" name="q6" value="3"> C) Há um protocolo formal para resolução de conflitos, mas ainda há dificuldades na aplicação.</label>
+          <label><input type="radio" name="q6" value="4"> D) A empresa possui um comitê ou conselho específico para mediar conflitos familiares.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 7 -->
+      <div class="question">
+        <p>7. Qual é o nível de governança na gestão de riscos?</p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="1"> A) Não há processos formais de gestão de riscos.</label>
+          <label><input type="radio" name="q7" value="2"> B) Existe uma identificação básica de riscos, mas sem ações concretas.</label>
+          <label><input type="radio" name="q7" value="3"> C) Há um processo de gestão de riscos implementado, mas ainda em desenvolvimento.</label>
+          <label><input type="radio" name="q7" value="4"> D) A empresa possui um sistema robusto de gestão de riscos, com monitoramento constante.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 8 -->
+      <div class="question">
+        <p>8. Como é a estrutura de governança corporativa?</p>
+        <div class="options">
+          <label><input type="radio" name="q8" value="1"> A) Não há estrutura formal de governança.</label>
+          <label><input type="radio" name="q8" value="2"> B) Existe um conselho informal, sem regularidade ou formalização.</label>
+          <label><input type="radio" name="q8" value="3"> C) Há um Conselho de Administração, mas sem membros independentes.</label>
+          <label><input type="radio" name="q8" value="4"> D) A empresa possui um Conselho de Administração formal, com membros independentes e comitês especializados.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 9 -->
+      <div class="question">
+        <p>9. Qual é o nível de aderência às práticas de compliance?</p>
+        <div class="options">
+          <label><input type="radio" name="q9" value="1"> A) Não há políticas ou práticas de compliance.</label>
+          <label><input type="radio" name="q9" value="2"> B) Existem algumas políticas, mas não são formalizadas ou monitoradas.</label>
+          <label><input type="radio" name="q9" value="3"> C) Há políticas de compliance formalizadas, mas ainda em fase de implementação.</label>
+          <label><input type="radio" name="q9" value="4"> D) A empresa possui um programa de compliance robusto, com monitoramento e treinamentos regulares.</label>
+        </div>
+      </div>
+
+      <!-- Pergunta 10 -->
+      <div class="question">
+        <p>10. Como a empresa trata a inovação e a modernização?</p>
+        <div class="options">
+          <label><input type="radio" name="q10" value="1"> A) A empresa resiste a mudanças e inovações.</label>
+          <label><input type="radio" name="q10" value="2"> B) Há algumas iniciativas pontuais, mas sem planejamento.</label>
+          <label><input type="radio" name="q10" value="3"> C) A empresa busca inovar, mas ainda falta uma estratégia clara.</label>
+          <label><input type="radio" name="q10" value="4"> D) A empresa possui uma cultura de inovação, com investimentos e estratégias definidas.</label>
+        </div>
+      </div>
+
+      <button type="button" onclick="calculateResult()">Calcular Resultado</button>
+    </form>
+
+    <div class="result" id="result" style="display: none;">
+      <!-- O resultado será exibido aqui -->
+    </div>
+
+    <div class="disclaimer" id="disclaimer" style="display: none;">
+      <p><strong>Disclaimer:</strong> Este teste é uma ferramenta prática e simplificada para autoavaliação do grau de maturidade em governança corporativa. Os resultados obtidos são indicativos e não substituem uma avaliação detalhada e personalizada, que deve ser realizada por profissionais especializados. Recomenda-se utilizar este diagnóstico como ponto de partida para reflexão e melhoria contínua.</p>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 C&S, Governança Corporativa Integrada. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+
+  <script>
+    function calculateResult() {
+      const questions = document.querySelectorAll('.question');
+      let totalScore = 0;
+
+      questions.forEach((question, index) => {
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+        if (selectedOption) {
+          totalScore += parseInt(selectedOption.value);
+        }
+      });
+
+      let resultText = '';
+      if (totalScore >= 10 && totalScore <= 20) {
+        resultText = `
+          <h3>Resultado: Emergente</h3>
+          <p>Sua empresa está no estágio inicial de governança corporativa. Identificamos que há pouca formalização e profissionalização nos processos, o que pode gerar desafios em áreas como sucessão familiar, gestão de conflitos e transparência financeira. Recomenda-se iniciar a implementação de práticas básicas de governança, como a criação de um plano de sucessão e a separação entre patrimônio familiar e empresarial.</p>
+        `;
+      } else if (totalScore >= 21 && totalScore <= 30) {
+        resultText = `
+          <h3>Resultado: Em Desenvolvimento</h3>
+          <p>Sua empresa já possui algumas práticas de governança, mas ainda há espaço para melhorias. Notamos que há esforços para profissionalizar a gestão e aumentar a transparência, mas alguns processos ainda carecem de formalização. Sugerimos a criação de um Conselho de Administração e a implementação de políticas de compliance para fortalecer a estrutura de governança.</p>
+        `;
+      } else if (totalScore >= 31 && totalScore <= 39) {
+        resultText = `
+          <h3>Resultado: Intermediária</h3>
+          <p>Sua empresa está em um estágio intermediário de governança corporativa. Identificamos uma boa estrutura de governança, com práticas como a existência de um Conselho de Administração e processos de gestão de riscos. No entanto, há oportunidades para avançar na profissionalização da gestão e na adoção de uma cultura de inovação.</p>
+        `;
+      } else if (totalScore === 40) {
+        resultText = `
+          <h3>Resultado: Avançada</h3>
+          <p>Parabéns! Sua empresa possui uma governança corporativa robusta, alinhada aos melhores padrões do mercado. Identificamos práticas avançadas, como a total separação entre patrimônio familiar e empresarial, a existência de um Conselho de Administração formal e a adoção de uma cultura de inovação. Continue investindo na melhoria contínua para manter essa excelência.</p>
+        `;
+      } else {
+        resultText = 'Por favor, responda todas as perguntas.';
+      }
+
+      document.getElementById('result').innerHTML = resultText;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('disclaimer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
